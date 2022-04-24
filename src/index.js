@@ -1,27 +1,41 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDom from "react-dom";
-import Button from "./Button";
-import ComponenteA from "./ComponenteA";
-import ComponenteB from "./ComponenteB";
 import "./style.css";
 
-function sum(a, b) {
-    return alert(a + b)
-}
+class App extends Component {
 
-const App = () => {
-    return (
-        <div className="App">
-            Hello World
-            <Button onClick={() => sum(10, 20)} name="Ariel Oliveira de Mello"/>
+    constructor(props) {
+        super(props)
 
-            <ComponenteA>
-                <ComponenteB>
-                    <Button onClick={() => sum(50, 20)} name="Ariel Oliveira"/>
-                </ComponenteB>
-            </ComponenteA>
-        </div>
-    )
+        this.state = {
+            clock: 1000,
+            copo: 'água'
+        }
+    }
+
+    componentDidMount = () => {
+        window.setTimeout(() => {
+            this.setState({
+                copo: 'suco'
+            })
+        }, 3000)
+    }
+
+    alterarCopo = () => {
+        this.setState({
+            copo: 'refrigerante'
+        })
+    }
+
+    render() {
+        const { clock, copo } = this.state
+        return (
+            <div>
+                <h1>{clock}</h1>
+                <button onClick={() => this.alterarCopo()}><h1>{copo}</h1></button>
+            </div>
+        )
+    }
 }
 
 const rootElement = document.getElementById("root");
