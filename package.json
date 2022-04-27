@@ -1,33 +1,24 @@
 {
-  "name": "introducao_react",
+  "name": "introducao_reactjs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start"
+    "build": "webpack --mode production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arielmell0/Introducao_ReactJS.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "^3.4.4"
+  "bugs": {
+    "url": "https://github.com/arielmell0/Introducao_ReactJS/issues"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "homepage": "https://github.com/arielmell0/Introducao_ReactJS#readme",
   "devDependencies": {
-    "webpack": "^4.46.0",
+    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   }
 }
