@@ -22,12 +22,25 @@ const renderAddCustomer = () => (
     </div>
 )
 
+const showCustomer = () => {
+    if(!hasCustomer) return null
+
+    return (
+        <div>
+            <h1>Nome do Cliente: Ariel Oliveira de Mello</h1>
+        </div>
+    )
+}
+
 const App = () => {
     return (
         <div>
             <p>Digital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
             {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+            <div>
+                {showCustomer()}
+            </div>
         </div>
     )
 }
