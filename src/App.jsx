@@ -6,7 +6,7 @@ const buttonB = <button>Cadastrar Cliente</button>
 
 const hasCustomer = true
 
-const renderShowHistory = () => (
+const renderShowHistory = (
     <div>
         Clique no botão abaixo para visualizar o histórico dos Clientes 
         <br/>
@@ -14,7 +14,7 @@ const renderShowHistory = () => (
     </div>
 )
 
-const renderAddCustomer = () => (
+const renderAddCustomer = (
     <div>
         Clique abaixo para cadastrar o cliente
         <br/>
@@ -37,7 +37,7 @@ const App = () => {
         <div>
             <p>Digital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
-            {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+            {hasCustomer ? renderShowHistory : renderAddCustomer}
             <div>
                 {showCustomer()}
             </div>
