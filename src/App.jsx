@@ -1,45 +1,52 @@
 import React from "react";
 
-const buttonA = <button>Histórico dos Clientes</button>
-
-const buttonB = <button>Cadastrar Cliente</button>
-
-const hasCustomer = true
-
-const renderShowHistory = (
-    <div>
-        Clique no botão abaixo para visualizar o histórico dos Clientes 
-        <br/>
-        {buttonA}
-    </div>
-)
-
-const renderAddCustomer = (
-    <div>
-        Clique abaixo para cadastrar o cliente
-        <br/>
-        {buttonB}
-    </div>
-)
-
-const showCustomer = () => {
-    if(!hasCustomer) return null
-
-    return (
-        <div>
-            <h1>Nome do Cliente: Ariel Oliveira de Mello</h1>
-        </div>
-    )
-}
+const listCustomer = [
+    {
+        id: 1,
+        name: 'Ariel Oliveira de Mello',
+        skills: ['React', 'Node', 'CSS', 'WebPack']
+    },
+    {
+        id: 2,
+        name: 'Adriana Pereira de Oliveira',
+        skills: ['Cobol', 'Golang', 'Insomnia', 'Python']
+    },
+    {
+        id: 3,
+        name: 'Silvio Alves de Mello',
+        skills: ['Angular', 'Electron', 'Elixir', 'Ruby']
+    },
+    {
+        id: 4,
+        name: 'Julia da Silva Schardosim',
+        skills: ['Express', 'MongoDB', 'MySQL', 'JWT']
+    },
+]
 
 const App = () => {
+    const renderCustomers = (customer, index) => {
+        return (
+            <div>
+                <li key={`customer-${customer.id}`}>{customer.name}</li>
+                {customer.skills.map(renderSkills)}
+            </div>      
+        )
+    }
+
+    const renderSkills = (skill, index) => {
+        return (
+            <div style={{ paddingLeft: '30px' }}  key={`skill-${index}`}>
+                <li>{skill}</li>
+            </div>
+        )
+    }
+
     return (
         <div>
             <p>Digital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
-            {hasCustomer ? renderShowHistory : renderAddCustomer}
             <div>
-                {showCustomer()}
+                <ul>{listCustomer.map(renderCustomers)}</ul>
             </div>
         </div>
     )
