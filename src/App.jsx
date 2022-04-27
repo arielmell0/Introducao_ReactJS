@@ -1,12 +1,23 @@
 import React from "react";
-import Button from './Button';
+
+const ButtonA = <button>Histórico dos Clientes</button>
+
+const ButtonB = <button>Segundo Botão</button>
+
+const hasCustomer = true
 
 const App = () => {
     return (
         <div>
             <p>Digital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
-            <Button/>     
+            {hasCustomer && (
+                <div>
+                    Clique no botão abaixo para visualizar o histórico dos Clientes 
+                    <br/>
+                    {ButtonA}
+                </div>
+            )}
         </div>
     )
 }
